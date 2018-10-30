@@ -11,28 +11,30 @@ var pike = {
 	minCust: 23,
 	maxCust: 65,
 	avgCook: 6.3,
-	Cust: Math.floor(Math.random()*(this.maxCust - this.minCust) + this.minCust),
-	CookSold: Math.round(this.Cust * this.avgCook),
+	cust: Math.floor(Math.random()*(this.maxCust - this.minCust) + this.minCust),
+	cookSold: Math.round(this.Cust * this.avgCook),
 
-  Cookies: function() {
-    return `${this.CookSold}`;
+  cookies: function() {
+    return `${this.cookSold}`;
 	},
 	render: function() {
 		var container = document.createElement('th');
     var tableEL = document.getElementById('cookie-spread');
 
-    tableEL.textContent = this.CookSold;
+    tableEL.textContent = this.cookSold;
 
     container.appendChild(tableEL);
 
 
 
     //tableEL.appendChild(container);
-	}
+	},
 };
 
+pike.cookies();
 pike.render();
-
+console.log(pike.cust);
+console.log(pike.CookSold);
 
 /*var Cust =Math.floor(Math.random()*(pike.maxCust - pike.minCust) + pike.minCust);
 var CookSold = Math.round(Cust * pike.avgCook);
