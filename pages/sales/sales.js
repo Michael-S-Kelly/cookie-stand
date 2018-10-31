@@ -15,17 +15,23 @@ function CookSales(name, minCust, maxCust, avgCook) {
 
 	this.custPerHr = function(min, max){
 		for(var i = 0; i < this.hoursOfOps.length; i++){
-			this.numCust.push(Math.floor(Math.random() * (max - min + 1) + min));
+			this.numCust.push(Math.round(Math.floor(Math.random() * (max - min + 1) + min) * this.avgCook));
+			//this.dailyTotal.push(this.dailyTotal + this.numCust);
+			//this.numCust.push(Math.floor(Math.random() * (max - min + 1) + min));
+			//this.numCook.push(Math.round(this.numCust * this.avgCook));
+			//cookies.push(this);
 		}
 	};
 	/*
 	this.cookPerHr = function(){
 		for(var i = 0; i < this.hoursOfOps.length; i++){
-			this.numCook = Math.round(this.numCust * this.avgCook);
-			cookies[i].render(this.numCook);
+			this.numCook.push(Math.round(this.numCust * this.avgCook));
+			//cookies[i].render(this.numCook);
 			//custPerHr.push(this.numCook);
 		}
-	}*/
+	};*/
+
+
 
 	cookies.push(this);
 	this.render();
@@ -33,8 +39,8 @@ function CookSales(name, minCust, maxCust, avgCook) {
 
 	//custPerHr.push(numCook);
 
-
-
+//console.log(this.numCust);
+//var totalCook = this.dailyTotal;
 
 
 
@@ -58,19 +64,29 @@ CookSales.prototype.render = function() { //console.log('rendering this;', this)
 	var theadEl = document.createElement('thead');
 	var tbodyEl = document.createElement('tbody');
 	var tfootEl = document.createElement('tfoot');
-	var thEl = document.createElement('th');
+	var trEl = document.createElement('tr');
+	var nameEl = document.createElement('th');
 	var numCookEl = document.createElement('tr');
+	var sumCookEl = document.createElement('tr');
+
 	tmainEl.appendChild(tableEl);
 
 	tableEl.appendChild(theadEl);
 	tableEl.appendChild(tbodyEl);
 	tableEl.appendChild(tfootEl);
 
-	tbodyEl.appendChild(thEl);
-	tbodyEl.appendChild(numCookEl);
-	console.log(this.numCust);
+	tbodyEl.appendChild(trEl);
+
+	trEl.appendChild(nameEl);
+	trEl.appendChild(numCookEl);
+	trEl.appendChild(sumCookEl);
+	//console.log(this.numCust);
 	this.custPerHr(this.minCust, this.maxCust);
-	numCookEl.textContent = this.numCook;
+	//totalCook = totalCook + this.numCust;
+	//console.log(totalCook);
+	nameEl.textContent = this.name;
+	numCookEl.textContent = this.numCust;
+	//sumCookEl.textContent = this.dailyTotal;
 };
 
 //createTable();
