@@ -1,7 +1,9 @@
+'use strict';
+
 var cookies = [];
 
 
-function CookSales(name, minCust, maxCust, avgCook) {
+function CookSales(name, minCust, maxCust, avgCook) { //Create Object 'CookSales'
 	this.name = name;
 	this.minCust = minCust;
 	this.maxCust = maxCust;
@@ -11,55 +13,23 @@ function CookSales(name, minCust, maxCust, avgCook) {
 	this.numCust = [];
 	this.numCook = [];
 
-
-
-	this.custPerHr = function(min, max){
+	this.custPerHr = function(min, max){ //for loop to create the random number of cookies sold per hour within the min/max
 		for(var i = 0; i < this.hoursOfOps.length; i++){
-			this.numCust.push(Math.round(Math.floor(Math.random() * (max - min + 1) + min) * this.avgCook));
-			//this.dailyTotal.push(this.dailyTotal + this.numCust);
-			//this.numCust.push(Math.floor(Math.random() * (max - min + 1) + min));
-			//this.numCook.push(Math.round(this.numCust * this.avgCook));
-			//cookies.push(this);
+			this.numCust.push(Math.round(Math.floor(Math.random() * (max - min + 1) + min) * this.avgCook));//splitting this line up into two lines didn't work for some reason
+			//still need to create a sum line to add each of the hours of cookie sales at one location for the day
+			//this.dailyTotal += this.numCust;
 		}
 	};
-	/*
-	this.cookPerHr = function(){
-		for(var i = 0; i < this.hoursOfOps.length; i++){
-			this.numCook.push(Math.round(this.numCust * this.avgCook));
-			//cookies[i].render(this.numCook);
-			//custPerHr.push(this.numCook);
-		}
-	};*/
-
 
 
 	cookies.push(this);
 	this.render();
-	}
-
-	//custPerHr.push(numCook);
-
-//console.log(this.numCust);
-//var totalCook = this.dailyTotal;
-
-
-
-
-/*
-function custPerHr(min, max){
-	for(var i = 0; i < this.hoursOfOps.length; i++){
-		var numCust = Math.floor(Math.random() * (max - min + 1) + min);
-		var numCook = Math.round(numCust * this.avgCook);
-		console.log (numCook);
-		cookies[i].render(numCook);
-		custPerHr.push(numCook);
-	}
 }
-*/
 
-//function createTable() {
-CookSales.prototype.render = function() { //console.log('rendering this;', this);
-	var tmainEl = document.getElementById('main-stuff');
+
+CookSales.prototype.render = function() { //create a table and send the gathered information to the table
+	//creat elements section
+	var tmainEl = document.getElementById('main-stuff');//decided to start from the main element and create the whole table
 	var tableEl = document.createElement('table');
 	var theadEl = document.createElement('thead');
 	var tbodyEl = document.createElement('tbody');
@@ -68,7 +38,7 @@ CookSales.prototype.render = function() { //console.log('rendering this;', this)
 	var nameEl = document.createElement('th');
 	var numCookEl = document.createElement('tr');
 	var sumCookEl = document.createElement('tr');
-
+	//attach the elements to the next one in line
 	tmainEl.appendChild(tableEl);
 
 	tableEl.appendChild(theadEl);
@@ -80,17 +50,13 @@ CookSales.prototype.render = function() { //console.log('rendering this;', this)
 	trEl.appendChild(nameEl);
 	trEl.appendChild(numCookEl);
 	trEl.appendChild(sumCookEl);
-	//console.log(this.numCust);
+
 	this.custPerHr(this.minCust, this.maxCust);
-	//totalCook = totalCook + this.numCust;
-	//console.log(totalCook);
+
 	nameEl.textContent = this.name;
 	numCookEl.textContent = this.numCust;
 	//sumCookEl.textContent = this.dailyTotal;
 };
-
-//createTable();
-
 
 new CookSales('1st and Pike', 23, 65, 6.3);
 new CookSales('SeaTac Airport', 3, 24, 1.2);
