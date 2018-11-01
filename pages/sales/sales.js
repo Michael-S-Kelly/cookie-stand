@@ -4,6 +4,8 @@ var cookies = [];
 
 function CookSales(name, minCust, maxCust, avgCook) { //Create Object 'CookSales'
 	this.name = name;
+	//this.name = [];
+	//this.aName = this.name;
 	this.minCust = minCust;
 	this.maxCust = maxCust;
 	this.avgCook = avgCook;
@@ -56,6 +58,7 @@ CookSales.prototype.render = function () { //create a table and send the gathere
 		var numCookEl = document.createElement('td');
 		trBodyEl.appendChild(numCookEl);
 		numCookEl.textContent = this.numCook[j];
+		//console.log(this.aName);
 		//console.log('Rendering the data for the number of cookies sold each hour', j, '/', this.numCook[j]);
 	}
 	var sumCookEl = document.createElement('td');
@@ -85,6 +88,37 @@ function tableHead(){
 	return theadEl;
 }
 
+function tableFooter (){
+	console.log('Begining of the function');
+	var tfootEl = document.getElementById('cookie-foot');
+	var trFootEl = document.createElement('tr');
+	tfootEl.appendChild(trFootEl);
+	var thFootEl = document.createElement('th');
+	trFootEl.appendChild(thFootEl);
+	thFootEl.textContent = ' ';
+	var totalPerHr = 0;
+	var totalPerDay = 0;
+	//console.log('Before the nested for loop', this.name[1]);
+	for(var i = 0; i < this.name.length; i++){
+		console.log('Before the inner loop');
+		for(var j = 0; j < hoursOfOps.length; j++){
+			totalPerHr += this.numCook[this.name[j]];
+			totalPerHr.push(totalPerHr);
+			console.log('This should output the sum of each shop per hour', totalPerHr);
+		}
+		totalPerDay += totalPerHr;
+		totalPerDay.push(totalPerDay);
+		var totPerHrEl = document.createElement('th');
+		trFootEl.appendChild(totPerHrEl);
+		totPerHrEl.textContent = totalPerHr;
+		console.log('This should output the sum of each shop per day', totalPerDay);
+
+	}
+	var totPerDyEl = document.createElement('th');
+	trFootEl.appendChild(totPerDyEl);
+	totPerDyEl.textContent = totalPerDay;
+}
+
 function createTable() {
 	var tmainEl = document.getElementById('main-stuff');
 	var tableEl = document.createElement('table');
@@ -103,10 +137,11 @@ function createTable() {
 	tbodyEl.id = 'cookie-body';
 	tfootEl.id = 'cookie-foot';
 	//console.log('Create Table function');
+	tableHead();
+	tableFooter();
 }
 
 createTable();
-tableHead();
 //this.render();
 
 
@@ -119,6 +154,16 @@ new CookSales('Seattle Center', 11, 38, 3.7);
 new CookSales('Capital Hill', 20, 38, 2.3);
 new CookSales('Alki', 2, 16, 4.6);
 
+function addLoc() {
+	var nameInput = event.target.name.value;
+	var minCustInput = event.target.minCust.value;
+	var maxCustInput = event.target.maxCust.value;
+	var avgCookInput = event.target.avgCook.value;
 
+	new CookSales(nameInput, minCustInput, maxCustInput, avgCookInput);
 
+}
+
+var submit = document.getElementById('sub');
+submit.addEventListener('click', addLoc);
 //console.log('end of code');
