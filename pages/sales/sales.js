@@ -18,6 +18,9 @@ function CookSales(name, minCust, maxCust, avgCook) { //Create Object 'CookSales
 	this.custPerHr(this.minCust, this.maxCust);
 	this.cookPerHr();
 	this.render();
+	/*
+	createTableFooter();
+	*/
 }
 
 //console.log('CookSales Object completed');
@@ -106,6 +109,33 @@ function tableFooter (){
 			totalPerHr.push(totalPerHr);
 			console.log('This should output the sum of each shop per hour', totalPerHr);
 		}
+
+		/*
+		function createTableFooter();
+		var tfootElCheck = document.getElementbyId('tbl-foot');
+
+		if (tfootElCheck) {
+			tfootElCheck.remove();
+		}
+
+		var tblEl = document.getElementById('sales-table');
+		var tfootEl = document.createElement('tfoot');
+		var trEl = document.createElement('tr');
+
+		var emptyThEl = documentcreateElement('th');
+		trEl.appendChild(emptyTHEl);
+
+		for(var i = 0; i < hoursOfOps.length; i++) {
+			var tdEl = document.createElement('td');
+			var totals = 0;
+			for(var j = 0; j < stores.length; j++) {
+				totals += stores[j].cookiesPerHour[i];
+			}
+		}
+
+		tdEl.textContent =totals;
+
+		*/
 		totalPerDay += totalPerHr;
 		totalPerDay.push(totalPerDay);
 		var totPerHrEl = document.createElement('th');
@@ -154,6 +184,14 @@ new CookSales('Seattle Center', 11, 38, 3.7);
 new CookSales('Capital Hill', 20, 38, 2.3);
 new CookSales('Alki', 2, 16, 4.6);
 
+/*
+(function run() {
+	createTable();
+	createTableHeader();
+	createTableBody();
+})();
+*/
+
 function addLoc() {
 	var nameInput = event.target.name.value;
 	var minCustInput = event.target.minCust.value;
@@ -166,4 +204,25 @@ function addLoc() {
 
 var submit = document.getElementById('sub');
 submit.addEventListener('click', addLoc);
+
+/*
+//var salesFormEl = document.getElementById('sales-form');
+//salesFormEl.addEventListener('submit', function() {})
+
+document.getElementById('sales-form').addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	var name = event.target.storename.value;
+	var min = event.target.min.value;
+	var max = event.target.max.value;
+	var avg = event.target.avg.value;
+
+	new Store(name, min, max, avg);
+
+	event.target.storename.value = '';
+	event.target.min.value = '';
+	event.target.max.value = '';
+	event.target.avg.value = '';
+});
+*/
 //console.log('end of code');
