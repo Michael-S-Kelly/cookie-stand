@@ -1,0 +1,64 @@
+body {
+    
+}
+
+#main-stuff {
+    background-color: salmon;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 1000px;
+}
+
+#header {
+    
+    width: 100%;
+    height: 200px;
+}
+
+.himage {
+    width: 300px;
+}
+
+#salmon1 {
+    float: left;
+    position: relative;
+    top: 60px;
+    left: 100px;
+}
+
+#chinook1 {
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 300px;
+}
+
+#title {
+    font-family: cursive;
+    font-size: 48px;
+    position: relative;
+    top: 80px;
+    left: 300px;
+    text-decoration: blink;
+
+}
+
+ul {
+    position: relative;
+    top: 150px;
+    width: 100%;
+    height: 100px;
+    background-color: lightskyblue;
+}
+
+li {
+    display: inline;
+    margin: 50px;
+}
+
+#add-store {
+    position: fixed;
+    top: 3000px;
+    left: 600px;
+}
