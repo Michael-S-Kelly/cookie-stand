@@ -47,7 +47,8 @@ li {
 }
 
 main {
-    top: 600px;
+    position: relative;
+    top: 40px;
 }
 
 th tr {
@@ -59,17 +60,18 @@ tr:nth-child(even) {
 
 table {
     position: absolute;
-    top: 700px;
+    top: 50px;
     left: 200px;
     z-index: 7;
     float: center;
     height: 400px;
     width: 1200px;
+    text-align: center;
 }
 
 #add-store {
     position: absolute;
-    top: 650px;
+    top: 0px;
     left: 100px;
     float: center;
 }
