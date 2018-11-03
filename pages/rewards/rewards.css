@@ -1,15 +1,3 @@
-body {
-    
-}
-
-#main-stuff {
-    background-color: salmon;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    top: 1000px;
-}
-
 #header {
     
     width: 100%;
@@ -55,10 +43,4 @@ ul {
 li {
     display: inline;
     margin: 50px;
-}
-
-#add-store {
-    position: fixed;
-    top: 3000px;
-    left: 600px;
 }
