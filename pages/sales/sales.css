@@ -1,25 +1,32 @@
-#header {
-    
+main {
+    background-color: salmon;
     width: 100%;
-    height: 200px;
+    position: relative;
+    top: 0px;
+}
+
+header {
+    position: fixed;    
+    width: 100%;
+    height: 50px;
+    z-index: 7;
 }
 
 .himage {
     width: 300px;
+    position: relative;
 }
 
 #salmon1 {
     float: left;
-    position: relative;
     top: 60px;
-    left: 100px;
+    left: 10%;
 }
 
 #chinook1 {
     float: right;
-    position: relative;
     top: 0px;
-    right: 300px;
+    right: 10%;
 }
 
 #title {
@@ -27,7 +34,8 @@
     font-size: 48px;
     position: relative;
     top: 80px;
-    left: 300px;
+    left: 20%;
+    right: 20%;
     text-decoration: blink;
 
 }
@@ -36,9 +44,8 @@ ul {
     position: relative;
     top: 150px;
     width: 100%;
-    height: 20px;
+    height: 50px;
     background-color: lightskyblue;
-    z-index: -2;
 }
 
 li {
@@ -46,13 +53,81 @@ li {
     margin: 50px;
 }
 
-main {
-    position: relative;
+#franchise {
+    position: absolute;
+    top: 260px;
+    left: 30%;
+    font-size: 50px;
+}
+#add-store {
+    position: absolute;
+    top: 360px;
+    left: 100px;
+}
+#nameTitle {
+    position: absolute;
+    top: -10px;
+    left: 600px;
+    width: 150px;
+}
+#nameBox {
+    position: absolute;
+    top: -20px;
+    left: -100px;
+    width: 300px;
+}
+#minTitle {
+    position: absolute;
     top: 40px;
+    left: 308px;
+    width: 200px;
+}
+#minBox {
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    width: 200px;
+}
+#maxTitle {
+    position: absolute;
+    top: 40px;
+    left: 552px;
+    width: 300px;
+}
+#maxBox {
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    width: 200px;
+}
+#avgTitle {
+    position: absolute;
+    top: 40px;
+    left: 815px;
+    width: 250px;
+}
+#avgBox {
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    width: 200px;
+}
+#sub {
+    position: absolute;
+    top: 90px;
+    left: 550px;
+    width: 200px;
+    height: 20px;
+    color: white;
+    background-color: green;
 }
 
-th tr {
-    border: 20px;
+th {
+    border: 2px solid black;
+    background-color: aqua;
+}
+td {
+    border: 2px solid black;
 }
 tr:nth-child(even) {
     background-color: silver;
@@ -60,19 +135,15 @@ tr:nth-child(even) {
 
 table {
     position: absolute;
-    top: 50px;
-    left: 200px;
+    top: 500px;
+    left: 157px;
     z-index: 7;
     float: center;
-    height: 400px;
+    height: 300px;
     width: 1200px;
     text-align: center;
     outline: 2px;
+    border: 2px solid black;
 }
 
-#add-store {
-    position: absolute;
-    top: 0px;
-    left: 100px;
-    float: center;
-}
+
