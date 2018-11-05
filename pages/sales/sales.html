@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Sales for Salmon Cookies</title>
-        <link rel="stylesheet" type="text/css" href="../../reset.css">
-        <link rel="stylesheet" type="text/css" href="sales.css">
-    </head>
-    <body>
-        <header>
-            <header id = "header">
-                <img class = "himage" id = "salmon1" src="../../salmon.png" /><h1 id = "title">Salmon Cookies</h1><img class = "himage" id = "chinook1" src="../../chinook.jpg" />
-           <div>
-               <ul>
-                <li id = "" class = ""><a href="../../index.html">Home</a></li>
-                <li id = "" class = ""><a href=" ">isbed</a></li>
-                <li id = "" class = ""><a href="../events/events.html">Events</a></li>
-                <li id = "" class = ""><a href="../rewards/rewards.html">Point reward system</a></li>
-                <li id = "" class = ""><a href="sales.html">Sales Opportunity</a></li>
-                <li id = "" class = ""><a href=" ">About Us</a></li>
-               </ul>
-           </div>
-            </header>
-        </header>
-        <main id = "main-stuff">
-            <div>
-            <form id = "add-store">
-                <label>Name of location<input name = "Name" type = "text"></label>
-                <label>Minimum Customers Per Hour<input name = "minCust" type = "number"></label>
-                <label>Maximum Customers Per Hour<input name = "maxCust" type = "number"></label>
-                <label>Average Number of Cookies purchased per Customer<input name = "avgCook" type = "number" step ='0.01'></label>
-                <input id = "sub" type = "submit" name = "addLoc" value = "Add Location">
-                <button type = "submit s"></button>
-            </form>
-        </div>
-        </main>
-        <footer></footer>
-        <script src="sales.js"></script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <title>Sales for Salmon Cookies</title>
+    <link rel="stylesheet" type="text/css" href="../../reset.css">
+    <link rel="stylesheet" type="text/css" href="sales.css">
+  </head>
+  <body>
+    <header id = "header">
+      <img class = "himage" id = "salmon1" src="../../salmon.png" /><h1 id = "title">Salmon Cookies</h1><img class = "himage" id = "chinook1" src="../../chinook.jpg" />
+      <div>
+        <ul>
+          <li id = "" class = ""><a href="../../index.html">Home</a></li>
+          <li id = "" class = ""><a href="">Events</a></li>
+          <li id = "" class = ""><a href="../cookie-stand/pages/rewards/rewards.html">Point reward system</a></li>
+          <li id = "" class = ""><a href="../cookie-stand/pages/sales/sales.html">Sales Opportunity</a></li>
+          <li id = "" class = ""><a href=" ">About Us</a></li>
+        </ul>
+      </div>
+      </header>
+    <main id = "main-stuff">
+      <div>
+        <h1 id="franchise">Franchise Locations Available</h1>
+        <form id = "add-store">
+          <label id="nameTitle">Name of location<input id="nameBox" name = "nameInput" type = "text"></label>
+          <label id="minTitle">Minimum Customers Per Hour<input id="minBox" name = "minCustInput" type = "number"></label>
+          <label id="maxTitle">Maximum Customers Per Hour<input id="maxBox" name = "maxCustInput" type = "number"></label>
+          <label id="avgTitle">Average Number of Cookies purchased per Customer<input id="avgBox" name = "avgCookiesInput" type = "number" step ='0.01'></label>
+          <!--<button id = "sub" type = "submit" name = "addLoc" value = "Add Location">-->
+              <button id="sub" type="submit">Submit Your Franchise Location!</button>
+
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+      <script src="sales.js"></script>
+  </body>
 </html>
