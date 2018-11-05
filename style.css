@@ -1,37 +1,36 @@
 body {
-    
+    background-color: rgb(223, 195, 192);
 }
 
-#main-stuff {
+main {
     background-color: salmon;
     width: 100%;
-    height: 100%;
     position: relative;
-    top: 1000px;
+    top: 300px;
 }
 
-#header {
-    
+header {
+    position: fixed;    
     width: 100%;
-    height: 200px;
+    height: 100px;
+    z-index: 7;
 }
 
 .himage {
     width: 300px;
+    position: relative;
 }
 
 #salmon1 {
     float: left;
-    position: relative;
     top: 60px;
-    left: 100px;
+    left: 10%;
 }
 
 #chinook1 {
     float: right;
-    position: relative;
     top: 0px;
-    right: 300px;
+    right: 10%;
 }
 
 #title {
@@ -39,7 +38,8 @@ body {
     font-size: 48px;
     position: relative;
     top: 80px;
-    left: 300px;
+    left: 20%;
+    right: 20%;
     text-decoration: blink;
 
 }
@@ -57,8 +57,53 @@ li {
     margin: 50px;
 }
 
-#add-store {
-    position: fixed;
-    top: 3000px;
-    left: 600px;
+#frosted1 {
+    position: absolute;
+    top: 100px;
+    left: 40%;
+}
+.powerStatement {
+    position: absolute;
+    top: 300px;
+    text-align: center;
+}
+
+#invent {
+    font-size: 40px;
+    left: 23%;
+}
+
+#revolution {
+    top: 350px;
+    font-size: 50px;
+    left: 28%;
+}
+
+#lesserStatement {
+    top: 400px;
+    font-size: 25px;
+    left: 33%;
+}
+
+#familyStatement {
+    top: 440px;
+    font-size: 20px;
+    left: 42%;
+}
+
+#family {
+    position: absolute;
+    top: 500px;
+    left: 34%;
+    width: 30%;
+}
+
+#one {
+    color: chocolate;
+}
+#two {
+    color: red;
+}
+#three {
+    color: brown;
 }

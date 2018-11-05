@@ -67,6 +67,7 @@ table {
     height: 400px;
     width: 1200px;
     text-align: center;
+    outline: 2px;
 }
 
 #add-store {
