@@ -18,15 +18,15 @@ function CookSales(name, minCust, maxCust, avgCook) { //Create Object 'CookSales
 	this.cookPerHr();
 	this.render();
 
-	//return this.numCook;
+	return this.numCook;
 
-  //tableFooter();
+  tableFooter();
 }
 
 //console.log('CookSales Object completed');
 CookSales.prototype.custPerHr = function (min, max) {
 	for (var i = 0; i < hoursOfOps.length; i++) {
-		var ranCustNum = Math.floor(Math.random() * (max - min + 1) + min);
+		var ranCustNum = Math.ceil(Math.random() * (max - min + 1) + min);
 		this.numCust.push(ranCustNum);
 		//console.log('Generating the number of customer per hour', ranCustNum);
 	}
@@ -117,13 +117,14 @@ function tableFooter() {
 
     trFootEl.appendChild(tdFootEl);
     console.log('before inner footer loop');
+
     for (var j = 0; j < cookies.length; j++) {
 		console.log('inside inner footer loop', cookies[j]);
     //console.log('inside inner footer loop', numCook[i]);
-    console.log('inside inner footer loop', cookies[j].cookieSales[i]);
+    console.log('inside inner footer loop', cookies[j].numCook[i]);
       totals += cookies[j].numCook[i];
 	}
-
+    console.log('After inner loop')
     daySalesTotal += totals;
     tdFootEl.textContent = totals;
     trFootEl.appendChild(tdFootEl);
@@ -156,11 +157,10 @@ function createTable() {
   //tfootEl.id = 'cookie-foot';
   //console.log('Create Table function');
   tableHead();
-  tableFooter();
+  //tableFooter();
 }
 
 createTable();
-//tableFooter();
 
 var firstAndPike = new CookSales('1st and Pike', 23, 65, 6.3);
 var SeaTac = new CookSales('SeaTac Airport', 3, 24, 1.2);
@@ -168,23 +168,25 @@ var SeaCent = new CookSales('Seattle Center', 11, 38, 3.7);
 var CapHill = new CookSales('Capital Hill', 20, 38, 2.3);
 var Alki = new CookSales('Alki', 2, 16, 4.6);
 
+tableFooter();
 
 var formEl = document.getElementById('add-store');
 formEl.addEventListener('submit', function(event) {
   event.preventDefault();
-
+  
   var nameInput = event.target.nameInput.value;
   var minCustInput = event.target.minCustInput.value;
   var maxCustInput = event.target.maxCustInput.value;
   var avgCookiesInput = event.target.avgCookiesInput.value;
-
+  
   event.target.store = new CookSales(nameInput, minCustInput, maxCustInput, avgCookiesInput);
   // console.log();
-
+  
   event.target.nameInput.value = '';
   event.target.minCustInput.value = '';
   event.target.maxCustInput.value = '';
   event.target.avgCookiesInput.value = '';
+  //tableFooter();
 });
 
 //console.log('end of code');
