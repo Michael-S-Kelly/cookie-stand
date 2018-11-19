@@ -20,7 +20,7 @@ function CookSales(name, minCust, maxCust, avgCook) { //Create Object 'CookSales
 
 	return this.numCook;
 
-  tableFooter();
+  //tableFooter();
 }
 
 //console.log('CookSales Object completed');
@@ -95,11 +95,13 @@ function tableHead(){
 function tableFooter() {
   var tableEl = document.getElementById('cookie-table');
   var tfootElCheck = document.createElement('tfoot');
+  //var tfootElCheck = document.getElementById('tfoot');
   if(tfootElCheck) {
     tfootElCheck.remove();
   }
 
   var tFootEl = document.createElement('tfoot');
+  //var tFootEl = document.getElementById('tfoot');
   var trFootEl = document.createElement('tr');
   var totalFootEl = document.createElement('th');
   totalFootEl.textContent = 'Total';
